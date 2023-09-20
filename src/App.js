@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import AppDescription from './components/AppDescription';
+import Comments from './components/comments/Comments';
+import Items from './components/todo/Items';
+import styles from './styles/App.module.css';
+
+const DUMMY_ARTICLE = {
+  name: 'First item',
+  id: '11624664',
+  comments: [
+    { body: 'four', color: '#000000', id: '11624664-0' },
+    { body: 'five', color: '#cd7a7a', id: '11624664-1' },
+  ],
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.grid}>
+      <div className={styles['grid-item']}>
+        <AppDescription />
+      </div>
+
+      <div className={styles['grid-item']}>
+        <Items />
+      </div>
+
+      <div className={styles['grid-item']}>
+        <Comments article={DUMMY_ARTICLE} />
+      </div>
     </div>
   );
 }
