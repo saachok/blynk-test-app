@@ -6,6 +6,11 @@
   background-color: white;
 }
 
+.active {
+  transition: .15s;
+  border-left: 4px solid deeppink;
+}
+
 .info {
   display: flex;
   width: 100%;

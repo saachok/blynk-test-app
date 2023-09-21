@@ -17,10 +17,3 @@
 .items-list > li:not(:last-child) {
   border-bottom: none;
 }
-
-
-/* Testing active-item identification */
-.items-list > li:nth-child() {
-  transition: 0.15s;
-  border-left: 4px solid deeppink;
-}

@@ -1,24 +1,44 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
+
+import { DEFAULT_COLOR } from '../constants';
 
 import styles from '../../styles/comments/Comments.module.css';
 import CommentsList from './CommentsList';
 
-const Comments = props => {
-  const { id, comments } = props.article;
-  let colorRef = useRef(null);
-  let textRef = useRef(null);
-
-  const handleTextChange = e => {
-    textRef = e.target.value;
-  };
+const Comments = ({ activeItem = {}, setActiveItem }) => {
+  const colorRef = useRef(null);
+  const [textInput, setTextInput] = useState('');
+  const { id, comments } = activeItem;
 
   const handleColorChange = e => {
-    colorRef = e.target.value;
+    colorRef.current.value = e.target.value;
+  };
+
+  const handleTextChange = e => {
+    setTextInput(e.target.value);
+  };
+
+  const resetFormValues = () => {
+    colorRef.current.value = DEFAULT_COLOR;
+    setTextInput('');
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(colorRef, textRef);
+
+    setActiveItem({
+      ...activeItem,
+      comments: [
+        ...activeItem.comments,
+        {
+          body: textInput,
+          color: colorRef.current.value,
+          id: `${id}-${comments.length}`,
+        },
+      ],
+    });
+
+    resetFormValues();
   };
 
   return (
@@ -29,12 +49,12 @@ const Comments = props => {
         <input
           className={styles['color-input']}
           type="color"
-          defaultValue={'#4BDF49'}
+          defaultValue={DEFAULT_COLOR}
           ref={colorRef}
           onChange={e => handleColorChange(e)}
         />
         <textarea
-          ref={textRef}
+          value={textInput}
           onChange={e => handleTextChange(e)}
           className={styles['text-input']}
           type="text"
