@@ -1,6 +1,6 @@
 import Item from './Item';
 
-import styles from '../../styles/todo/ItemsList.module.css';
+import styles from '../../styles/items/ItemsList.module.css';
 
 const ItemsList = ({ items, setItems, activeItem, setActiveItem }) => {
   return (

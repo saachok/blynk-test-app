@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { getRandomId } from '../../functions/dataHandling';
 
-import styles from '../../styles/todo/Items.module.css';
+import styles from '../../styles/items/Items.module.css';
 import ItemsList from './ItemsList';
 
 const Items = ({ items, setItems, activeItem, setActiveItem }) => {

@@ -1,4 +1,4 @@
-import styles from '../../styles/todo/Item.module.css';
+import styles from '../../styles/items/Item.module.css';
 
 const Item = ({ id, name, comments, setItems, activeItem, onClick }) => {
   const handleDelete = () => {

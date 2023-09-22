@@ -1,6 +1,6 @@
 import AppDescription from './components/AppDescription';
 import Comments from './components/comments/Comments';
-import Items from './components/todo/Items';
+import Items from './components/items/Items';
 import styles from './styles/App.module.css';
 
 import { useData } from './hooks/useData';
