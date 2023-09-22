@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/blynk-test-app/static/css/main.997c194f.css",
+    "main.js": "/blynk-test-app/static/js/main.26f89efc.js",
+    "static/js/787.335c43c6.chunk.js": "/blynk-test-app/static/js/787.335c43c6.chunk.js",
+    "index.html": "/blynk-test-app/index.html",
+    "main.997c194f.css.map": "/blynk-test-app/static/css/main.997c194f.css.map",
+    "main.26f89efc.js.map": "/blynk-test-app/static/js/main.26f89efc.js.map",
+    "787.335c43c6.chunk.js.map": "/blynk-test-app/static/js/787.335c43c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.997c194f.css",
+    "static/js/main.26f89efc.js"
+  ]
+}
