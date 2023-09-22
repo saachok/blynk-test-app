@@ -9,6 +9,7 @@ const Comments = ({ activeItem = {}, setActiveItem }) => {
   const colorRef = useRef(null);
   const [textInput, setTextInput] = useState('');
   const { id, comments } = activeItem;
+  const isDisabled = !activeItem.id;
 
   const handleColorChange = e => {
     colorRef.current.value = e.target.value;
@@ -61,7 +62,13 @@ const Comments = ({ activeItem = {}, setActiveItem }) => {
           placeholder="Type name here..."
           required
         />
-        <button type="submit" className={styles['add-btn']}>
+        <button
+          disabled={isDisabled}
+          type="submit"
+          className={`${styles['add-btn']} ${
+            isDisabled ? styles.disabled : ''
+          }`}
+        >
           Add New
         </button>
       </form>
