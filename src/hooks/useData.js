@@ -11,7 +11,7 @@ export const useData = () => {
     localStorage.getItem('activeItem') ?? JSON.stringify(INITIAL_ITEM)
   );
   const [items, setItems] = useState(
-    storedItems.length ? storedItems : INITIAL_ITEMS
+    storedItems?.length ? storedItems : INITIAL_ITEMS
   );
   const [activeItem, setActiveItem] = useState(
     storedActiveItem || INITIAL_ITEM
