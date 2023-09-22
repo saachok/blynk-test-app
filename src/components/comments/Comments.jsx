@@ -65,9 +65,7 @@ const Comments = ({ activeItem = {}, setActiveItem }) => {
         <button
           disabled={isDisabled}
           type="submit"
-          className={`${styles['add-btn']} ${
-            isDisabled ? styles.disabled : ''
-          }`}
+          className={`${styles['add-btn']} ${isDisabled && styles.disabled}`}
         >
           Add New
         </button>
